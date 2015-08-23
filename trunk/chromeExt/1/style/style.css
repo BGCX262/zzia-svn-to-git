@@ -1,0 +1,20 @@
+#myTextarea{width:350px;height:150px}
+#myDiv{
+	left: 10px;
+	top:33px;
+	width:370px;
+	position:fixed;
+	z-index:9999;
+}
+#myDiv input{
+	margin:5px 5px;
+}
+#myDiv *{border:1px solid #333}
+#myDiv > input[type='button']{
+	background:url(chrome-extension://epjgkdmfmdjcjbcddhkhimfdhhflmpkm/images/btn.gif) right center no-repeat;
+	background-size: 91px 32px;
+	cursor: pointer;
+	width: 95px;
+	height: 32px;
+	border:0;
+}

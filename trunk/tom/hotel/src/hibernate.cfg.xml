@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 数据库配置 -->
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<!-- 其他配置 -->
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+
+		<!-- 映射配置文件 -->
+		<!-- <mapping resource="org/hibernate/test/legacy/Simple.hbm.xml"/> -->
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Velocity App</title>
+</head>
+<body>
+Hello $!{user.username}<br>
+You password is <span style="color:red;">$!{user.password}</span><br>
+You password is $!{user.password}
+</body>
+</html>

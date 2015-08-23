@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>静态页面</title>
+<script type="text/javascript" src=".././js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src=".././js/jquery.cookie.js"></script>
+<script type="text/javascript">
+	/*
+	 $(function() {
+	 //使用HTML本地存储
+	 setOption(window.localStorage.getItem("phonelist"));
+	 $("[type='button']").click(function() {
+	 var num = $("#phone").val();
+	 var ls = window.localStorage;
+	 var phonelist = ls.getItem("phonelist");
+	 if (!phonelist) {
+	 phonelist = [];
+	 }
+	 var array = [].concat(phonelist);
+	 array.unshift(num);
+	 ls.setItem("phonelist", array);
+	 setOption(ls.getItem("phonelist"));
+	 });
+	 });
+	 function setOption(phonelist){
+	 if(phonelist)
+	 $.each(phonelist.split(","),function(i,v){
+	 $(".phonelist").append($("<option>",{text:v}));
+	 })
+	 }
+	 */
+</script>
+<script>
+	$(function() {
+		//cookies方案
+		setOption($.cookie("phonelist"));
+		$("#mobileNoOk1").click(function() {
+			var num = $("#phone").val();
+			var phonelist = $.cookie("phonelist");
+			var array = [].concat(!phonelist ? [] : phonelist);
+			array.unshift(num);
+			$.cookie("phonelist", array);
+			setOption($.cookie("phonelist"));
+		});
+	});
+	/*号码设置在select中*/
+	function setOption(phonelist) {
+		if (phonelist) {
+			$(".phonelist").empty();
+			$.each(phonelist.split(","), function(i, v) {
+				$(".phonelist").append($("<option>", {text : v}));
+			});
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>这个是静态页面。</h1>
+	<input type="text" id="phone" />
+	<input type="button" value="冲值" />
+	<br />
+	<select class="phonelist">
+		<option>18939593537</option>
+		<option>18939593537</option>
+	</select>
+</body>
+</html>

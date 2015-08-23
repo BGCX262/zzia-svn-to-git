@@ -1,0 +1,28 @@
+﻿{ 
+   "name": "jQueryCommandTolls", //名称
+   "version": "0.1", 			//插件版本
+   "manifest_version": 2,
+   "description": "我的第一个Chrome插件", //
+   "permissions": [	//这是权限列表
+		"tabs", 	//可访问标签
+		"http://*/*",	//可访问所有页面
+		"notifications"//可桌面通知
+	],
+	"web_accessible_resources": [//扩展在注入的目标页面上所需使用的资源的路径
+        "style/style.css",
+		"images/btn.gif"
+    ],
+   "content_scripts":[//向WEB页面注入
+	{
+		"matches": ["http://*/*"],//匹配注入的URL
+		"js":["js/jquery.js","js/pageJs.js"],
+		"css":["style/style.css"],
+		"run_at": "document_end"
+	}
+   ],
+   "options_page": "options.html",//增加插件选项页
+   "browser_action": {//在工具栏上增加图标
+      "default_icon": "icon.gif",//工具栏图标
+      "default_popup": "popup.html" //点击图标后弹出页面
+   }
+}
